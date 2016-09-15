@@ -49,6 +49,8 @@ const (
 	K8sURLFlag   = "k8s_url"
 	K8sTokenFlag = "k8s_token"
 
+	EurekaURLsFlag = "eureka_url"
+
 	FSCatalogFlag = "fs_catalog"
 
 	StoreFlag         = "store"
@@ -170,6 +172,12 @@ var Flags = []cli.Flag{
 		Name:   K8sTokenFlag,
 		EnvVar: envVarFromFlag(K8sTokenFlag),
 		Usage:  "Kubernetes token API",
+	},
+
+	cli.StringSliceFlag{
+		Name:   EurekaURLsFlag,
+		EnvVar: envVarFromFlag(EurekaURLsFlag),
+		Usage:  "Enable eureka catalog and specify the eureka API server URLs",
 	},
 
 	cli.StringFlag{
