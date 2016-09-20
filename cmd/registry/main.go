@@ -163,7 +163,7 @@ func registryMain(conf *config.Values) error {
 
 	// See whether eureka catalog is enabled
 	if len(conf.EurekaURLs) > 0 {
-		eurekaFactory, err := eureka.New(&eureka.EurekaConfig{EurekaURLs: conf.EurekaURLs})
+		eurekaFactory, err := eureka.New(&eureka.Config{EurekaURLs: conf.EurekaURLs})
 		if err != nil {
 			return err
 		}
